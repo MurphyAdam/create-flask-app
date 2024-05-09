@@ -37,10 +37,22 @@ Same as the command line, this will prompt you to enter some data, press enter t
 
 ## Start the server
 
+First, setup the virtual environment
+
 ```bash
 cd <your_project_name>
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+Then start the server
+
+```bash
 python wsgi.py
 ```
+
+The server should be running on `http://localhost:5000`
 
 ## Endpoints provided
 
