@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kickstart_flask_app"
+version = "1.2.0.dev0"
+authors = [{ name = "Majdi Mahfoud", email = "elm.majidi@gmail.com" }]
+description = "Generate a new Flask app project."
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = ["flask"]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+]
+
+[project.urls]
+"Bug Tracker" = "https://github.com/MurphyAdam/kickstart-flask-app/issues"
+Homepage = "https://github.com/MurphyAdam/kickstart-flask-app"
+
+[project.scripts]
+kickstart-flask-app = "kickstart_flask_app:console"
