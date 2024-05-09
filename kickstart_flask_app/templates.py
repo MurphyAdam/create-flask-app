@@ -1,29 +1,41 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 from string import Template
 from textwrap import dedent
 
-wsgi_template = Template(dedent("""\
+wsgi_template = Template(
+    dedent(
+        """\
     # -*- coding: utf-8 -*-
     from ${app_name} import create_app
 
     app = create_app()
 
-    """))
+    """
+    )
+)
 
-procfile_template = Template(dedent("""\
+procfile_template = Template(
+    dedent(
+        """\
     web: gunicorn wsgi:app
 
-    """))
+    """
+    )
+)
 
-tests_template = Template(dedent("""\
+tests_template = Template(
+    dedent(
+        """\
     import unittest
 
     # write your tests here
-    """))
+    """
+    )
+)
 
 
-app_init_template = Template(dedent("""\
+app_init_template = Template(
+    dedent(
+        """\
     import logging, os
     from logging.handlers import SMTPHandler, RotatingFileHandler
     from flask import Flask
@@ -68,9 +80,13 @@ app_init_template = Template(dedent("""\
                 app.logger.info(f'{app.config["APP_NAME"]} startup')
             return app
 
-    """))
+    """
+    )
+)
 
-main_bp_routes_template = Template(dedent("""\
+main_bp_routes_template = Template(
+    dedent(
+        """\
     from datetime import datetime
     from ${app_name}.${main_bp_name} import ${main_bp_name}
     from flask import jsonify, render_template
@@ -87,22 +103,34 @@ main_bp_routes_template = Template(dedent("""\
     def index():
         return render_template('index.html')
 
-    """))
+    """
+    )
+)
 
-main_bp_init_template = Template(dedent("""\
+main_bp_init_template = Template(
+    dedent(
+        """\
     from flask import Blueprint
     ${main_bp_name} = Blueprint('${main_bp_name}', __name__)
     from ${app_name}.${main_bp_name} import routes
 
-    """))
+    """
+    )
+)
 
-requirements_template = Template(dedent("""\
+requirements_template = Template(
+    dedent(
+        """\
     flask
     gunicorn
 
-    """))
+    """
+    )
+)
 
-config_template = Template(dedent("""\
+config_template = Template(
+    dedent(
+        """\
     import os
 
     '''
@@ -152,14 +180,22 @@ config_template = Template(dedent("""\
         LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT') or True
         SECRET_KEY = os.environ.get('SECRET_KEY') or b'your_secrete_key'
 
-    """))
+    """
+    )
+)
 
-runtime_template = Template(dedent("""\
+runtime_template = Template(
+    dedent(
+        """\
     python-${runtime}
 
-    """))
+    """
+    )
+)
 
-html_index = Template(dedent("""\
+html_index = Template(
+    dedent(
+        """\
     <!DOCTYPE html>
     <html>
         <head>
@@ -176,9 +212,13 @@ html_index = Template(dedent("""\
             </p>
         </body>
     </html>
-    """))
+    """
+    )
+)
 
-style_css = Template(dedent("""\
+style_css = Template(
+    dedent(
+        """\
     html,
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -210,10 +250,16 @@ style_css = Template(dedent("""\
         justify-content: center;
         font-size: 1.5rem;
     }
-    """))
+    """
+    )
+)
 
-bashrc_template = Template(dedent("""\
+bashrc_template = Template(
+    dedent(
+        """\
     EXPORT FLASK_ENV='development'
     EXPORT FLASK_APP='development'
 
-    """))
+    """
+    )
+)
