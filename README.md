@@ -37,13 +37,14 @@ Same as the command line, this will prompt you to enter some data, press enter t
 
 ## Start the server
 
-First, setup the virtual environment
+First, setup the virtual environment and set environment variables. (APP_ENV or FLASK_ENV to 'dev' or 'prod')
 
 ```bash
 cd <your_project_name>
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+export FLASK_ENV=dev
 ```
 
 Then start the server
