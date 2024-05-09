@@ -35,6 +35,13 @@ console()
 
 Same as the command line, this will prompt you to enter some data, press enter to use defaults.
 
+## Start the server
+
+```bash
+cd <your_project_name>
+python wsgi.py
+```
+
 ## Endpoints provided
 
 `/` renders html template
