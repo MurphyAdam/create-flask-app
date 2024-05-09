@@ -1,6 +1,7 @@
 # kickstart-flask-app
 
-This is a simple package to kickstart a new Flask app project
+This is a simple package to kickstart a new Flask app project.
+It creates a new Flask project with a simple structure and some endpoints.
 
 ## Install
 
@@ -10,38 +11,32 @@ pip install kickstart-flask-app
 
 ## Usage
 
-you could use this package in two ways:
+You could use this package in two ways:
 
-1. The Python interpreter
+### 1. Command line (recommended)
 
-```bash
-python
-```
-
-```python
-
-from kickstart_flask_app import KickstartFlaskApp
-
-create_app = KickstartFlaskApp()
-create_app.main()
-
-```
-The above will propmt you to enter some data, press enter to use defaults. 
-This will create a new Flask project in the path you run the python interpreter
-
-2. Command line (recommended)
+Type the following in your terminal
 
 ```bash
 kickstart-flask-app
 ```
-once you have installed the package, it also provides a command line command in your terminal: `kickstart-flask-app`
-This, just as the Python interpreter will prompt the same. This is much quicker than importing all 
-the code yourself.
+
+The above will propmt you to enter some data, press enter to use defaults.
+This will create a new Flask project in the path you run the python interpreter
+
+### 2. The Python interpreter
+
+```py
+from kickstart_flask_app import console
+
+console()
+
+```
+
+Same as the command line, this will prompt you to enter some data, press enter to use defaults.
 
 ## Endpoints provided
 
 `/` renders html template
-`/api` returns json data
 
-## Github repository
-[kickstart-flask-app](https://github.com/MurphyAdam/kickstart-flask-app)
+`/api` returns json data
