@@ -6,6 +6,8 @@
 # Python cache
 __pycache__
 .pyc
+.cache/
+
 # .bashrc
 .bashrc
 # testing
@@ -19,9 +21,11 @@ develop-eggs/
 downloads/
 eggs/
 .eggs/
+*.egg-info/
 lib/
 lib64/
 parts/
+*dist/
 sdist/
 var/
 wheels/
